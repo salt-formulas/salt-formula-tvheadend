@@ -1,0 +1,8 @@
+applications:
+- tvheadend
+parameters:
+  tvheadend:
+    server:
+      enabled: True
+      user:
+        majklk: {}

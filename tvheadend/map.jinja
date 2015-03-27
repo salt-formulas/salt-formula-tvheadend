@@ -1,0 +1,11 @@
+{% set server = salt['grains.filter_by']({
+    'Debian': {
+        'pkgs': ['tvheadend', 'kodi-pvr-tvheadend-hts', 'v4l-conf', 'v4l-utils', 'dvb-tools', 'w-scan'],
+        'service': 'tvheadend',
+        'config': '/etc/tvheadend.conf',
+        'config_template': 'salt://tvheadend/files/tvheadend.conf',
+        'cache_size': 64,
+        'incomming_connections': 8192,
+        'threads': 1,
+    },
+}, merge=salt['pillar.get']('tvheadend:server')) %}
