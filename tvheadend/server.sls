@@ -4,7 +4,7 @@
 tvheadend_repo:
   pkgrepo.managed:
   - human_name: TVheadend
-  - name: deb http://apt.tvheadend.org/unstable trusty main
+  - name: deb http://apt.tvheadend.org/unstable {{ grains['oscodename'] }} main
   - file: /etc/apt/sources.list.d/tvheadend.list
   - key_url: salt://tvheadend/files/tvheadend.gpg
   - require_in:
